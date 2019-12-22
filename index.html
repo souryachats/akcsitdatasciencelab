@@ -5,37 +5,218 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
 	
 	<script>
-	     function EasyPeasyParallax() {
-	scrollPos = $(this).scrollTop();
-	$('.p1').css({
-		'background-position' : '50% ' + (-scrollPos/4)+"px"
-	});
-  $('.p2').css({
-		'background-position' : '50% ' + (-scrollPos/8)+"px"
-	});
-  $('.p3').css({
-		'background-position' : '70% ' + (-scrollPos/16)+"px"
-	});
-	$('.parallax-text').css({
-		'margin-top': (scrollPos/2)+"px",
-		'opacity': 1-(scrollPos/230)
-	});
-}
+	     
 $(document).ready(function(){
-	$(window).scroll(function() {
-		EasyPeasyParallax();
-	});
+	
+		showhome();
+	
 });
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+function showhome() {
+  var a = document.getElementById("div1");
+  var b = document.getElementById("div2");
+  var c = document.getElementById("div3");
+  var d = document.getElementById("div4");
+  var e = document.getElementById("div5");
+  
+    a.style.display = "block";
+    b.style.display = "none";
+    c.style.display = "none";
+	d.style.display = "none";
+    e.style.display = "none";
+  
+};
+function showmembers() {
+  var a = document.getElementById("div1");
+  var b = document.getElementById("div2");
+  var c = document.getElementById("div3");
+  var d = document.getElementById("div4");
+  var e = document.getElementById("div5");
+  
+    a.style.display = "none";
+    b.style.display = "block";
+    c.style.display = "none";
+	d.style.display = "none";
+    e.style.display = "none";
+  
+};
+function showactivities() {
+  var a = document.getElementById("div1");
+  var b = document.getElementById("div2");
+  var c = document.getElementById("div3");
+  var d = document.getElementById("div4");
+  var e = document.getElementById("div5");
+  
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "block";
+	d.style.display = "none";
+    e.style.display = "none";
+  
+};
+function showphotogallery() {
+  var a = document.getElementById("div1");
+  var b = document.getElementById("div2");
+  var c = document.getElementById("div3");
+  var d = document.getElementById("div4");
+  var e = document.getElementById("div5");
+  
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "none";
+	d.style.display = "block";
+    e.style.display = "none";
+  
+};
+function showpublications() {
+  var a = document.getElementById("div1");
+  var b = document.getElementById("div2");
+  var c = document.getElementById("div3");
+  var d = document.getElementById("div4");
+  var e = document.getElementById("div5");
+  
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "none";
+	d.style.display = "none";
+    e.style.display = "block";
+  
 }
 	</script>
 	<style>
+	* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 15%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 	 	body {
   background-color: #ECECEC;
   color: #444444;
@@ -127,23 +308,33 @@ li.active > a.nav-button {
   cursor: default;
 }
 .parallax {
-  height: 70vh;
+  height: 35vh;
   overflow: hidden;
   margin: 0;
   padding: 0;
 }
 .parallax.p1 {
-  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-70374.jpg) no-repeat fixed 50% 0;
+  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
   background-size: cover;
   color: #fff;
 }
 .parallax.p2 {
-  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-126549.jpg) no-repeat fixed 50% 0;
+  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
   background-size: cover;
   color: #fff;
 }
 .parallax.p3 {
-  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95766.jpg) no-repeat fixed 70% 0;
+  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
+  background-size: cover;
+  color: #fff;
+}
+.parallax.p4 {
+  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
+  background-size: cover;
+  color: #fff;
+}
+.parallax.p5 {
+  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
   background-size: cover;
   color: #fff;
 }
@@ -173,7 +364,7 @@ hgroup{
   color: #fff;
   border: 5px solid #fff;
   padding: .5em 3em;
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.5);
   z-index: 2;
 }
 .row {
@@ -181,8 +372,8 @@ hgroup{
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 15px;
-  padding-bottom: 15px;
-  min-height: 150px;
+  padding-bottom: 1.8%;
+  min-height: 18%;
 }
 .row:after {
   content: "";
@@ -194,20 +385,20 @@ hgroup{
   height: 100%;
   box-sizing: border-box;
   float: left;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: .6%;
+  padding-right: .6%;
 }
 footer {
   width: 100%;
-  padding-top: 20px;
+  padding-top: 2.4%;
   display: block;
   background-color: #ee6e73;
 }
 .footer-copyright {
   font-weight: 300;
   overflow: hidden;
-  height: 50px;
-  line-height: 50px;
+  height: 6%;
+  line-height: 6%;
   color: rgba(255, 255, 255, 0.8);
   background-color: rgba(51, 51, 51, 0.08);
 }
@@ -218,11 +409,20 @@ footer {
   max-width: 1280px;
 }
 footer p {
-  border-left: 3px solid #ffcdd2;
-  padding-left: 15px;
-  text-indent: 20px;
+  border-left: 0.36% solid #ffcdd2;
+  padding-left: 1.8%;
+  text-indent: 2.4%;
   color: #ececec;
 }
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding:1.8%;
+}
+table{
+  margin:9%;
+}
+
 
 
 /* Blank lines for ease and view */
@@ -230,70 +430,293 @@ footer p {
 	</style>
 
   </head>
-  <body>
+  <body onload="showhome()">
      
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <div class="navbar">
       <ul class="navbar-container">
         <li><a href="#" class="left-underline nav-button brand-logo">Brand Logo</a></li>
-        <li class="nav-item"><a href="#section-3" onclick="myFunction()" class="left-underline nav-button" data-scroll>Wallet</a></li>
-        <li class="nav-item"><a href="#section-2" class="left-underline nav-button" data-scroll>Pictures</a></li>
-        <li class="nav-item active"><a href="#section-1" class="left-underline nav-button" data-scroll>Home</a></li>
+		<li class="nav-item"><a href="#" onclick="showpublications()" class="left-underline nav-button" data-scroll>Publications</a></li>
+        <li class="nav-item"><a href="#" onclick="showphotogallery()" class="left-underline nav-button" data-scroll>Photo Gallery</a></li>
+        <li class="nav-item"><a href="#" onclick="showactivities()" class="left-underline nav-button" data-scroll>Activities</a></li>
+        <li class="nav-item"><a href="#" onclick="showmembers()" class="left-underline nav-button" data-scroll>Members</a></li>
+        <li class="nav-item"><a href="#" onclick="showhome()" class="left-underline nav-button" data-scroll>Home</a></li>
       </ul>
     </div>
-    <div class="parallax p1" id="section-1">
+	<div id="div1">
+    <div class="parallax p1">
       <hgroup>
-        <h1>Hello.</h1>
-        <h2>I’m a startup.</h2>
+         <h2>DATA SCIENCE LABORATORY, AKCSIT</h2>		 
       </hgroup>
     </div>
-	<div id="myDIV">
-      This is my DIV element.
-    </div>
+	
     <div class="row">
       <div class="col-3">
-        <h1>First Section Col1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus maximus quam et dignissim. Praesent felis arcu, euismod et ullamcorper ut, condimentum ut ante. Vestibulum vel libero commodo, aliquam libero eu, gravida arcu. Proin scelerisque faucibus ligula quis efficitur. Donec at sollicitudin purus, suscipit tempus augue. Sed imperdiet volutpat sapien at hendrerit. Mauris egestas ex a quam tincidunt gravida. Quisque interdum tempor lacinia. Nulla eget varius purus. Integer non sollicitudin dui. Phasellus sem turpis, maximus in auctor vulputate, porta id nunc.</p>
+        
+        <p>Data Science is a concept to bundle Statistics, Computer Science and Domain Knowledge to analyse the actual phenomena of data. Fuelled by Big Data and AI, the demand of Data Science is growing exponentially and with this rise, the A.K.C.S.I.T. under University of Calcutta has also looked forward by opening a laboratory dedicated for exploring the world of Data Science. The data science laboratory has a Fuzitusu 16 core server with 256 GB RAM and a GPU will be added to the rack in the next 2 months. The lab has i5 machines with 16 GB RAM provided by TEQUIP and high-speed internet connectivity.</p>
       </div>
       <div class="col-3">
-        <h1>First Section Col2</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet est id leo facilisis, quis egestas erat vehicula. Aenean nec facilisis leo, et tristique lorem. Aliquam porttitor, elit ac ornare lacinia, sapien augue sagittis dolor, tempor ultricies lorem arcu et ante. Nulla facilisi. Praesent facilisis lacus at blandit maximus. Ut at libero nisi. Cras eu augue tellus. Nam pretium eget nisi non viverra. Maecenas eget tincidunt nibh, vitae interdum dolor.</p>
+       
+        <p>The students are encouraged to use cloud resources like Kaggle Kernels and Google Colab for the researchers are working are renewable energy, quantum machine learning, medical image processing, text analytics, bioinformatics to name a few. The research work is carried out in collaboration with many national and international institutes and organizations. There is a strong data science ecosystem built around the lab, where not only students but practitioners from different companies participate. There is participation from industry in sharing research problems.</p>
       </div>
       <div class="col-3">
-        <h1>First Section Col3</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nibh dolor. Cras rutrum molestie ligula posuere hendrerit. Donec luctus vitae elit in gravida. Duis in viverra nunc. Nunc et metus blandit, blandit quam in, laoreet mi. In vitae mauris sit amet tellus dictum rhoncus malesuada non arcu. Ut lacus lacus, dignissim at commodo id, dapibus sed felis. Cras in nunc id est lobortis euismod. Sed egestas nulla et augue sagittis lacinia. Quisque finibus bibendum risus, vitae accumsan ante mollis ac. Aliquam fermentum, mauris eu gravida dictum, tortor risus finibus nibh, in tincidunt velit tortor vehicula mi.</p>
+        
+        <p>. In last 3-4 months there have been workshops organized on Deep Learning, Time Series Analysis and Quantum Computing. There is also monthly meetups as a knowledge sharing session. In next 3 months, we are planning to have a session multivariate statistic, use of neural networks for time series prediction and artificial intelligence. Few tutorials are also being planned to be organized shortly.</p>
       </div>
     </div>
-    <div class="parallax p2" id="section-2">
+    </div>
+	<div id="div2">
+	<div class="parallax p2">
       <hgroup>
-        <h1>Well</h1>
-        <h2>This is some bold info!</h2>
+        
+        <h2>Members</h2>
       </hgroup>
     </div>
-    <div class="row">
-      <div class="col-3">
-        <h1>First Section Col1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus maximus quam et dignissim. Praesent felis arcu, euismod et ullamcorper ut, condimentum ut ante. Vestibulum vel libero commodo, aliquam libero eu, gravida arcu. Proin scelerisque faucibus ligula quis efficitur. Donec at sollicitudin purus, suscipit tempus augue. Sed imperdiet volutpat sapien at hendrerit. Mauris egestas ex a quam tincidunt gravida. Quisque interdum tempor lacinia. Nulla eget varius purus. Integer non sollicitudin dui. Phasellus sem turpis, maximus in auctor vulputate, porta id nunc.</p>
-      </div>
-      <div class="col-3">
-        <h1>First Section Col2</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet est id leo facilisis, quis egestas erat vehicula. Aenean nec facilisis leo, et tristique lorem. Aliquam porttitor, elit ac ornare lacinia, sapien augue sagittis dolor, tempor ultricies lorem arcu et ante. Nulla facilisi. Praesent facilisis lacus at blandit maximus. Ut at libero nisi. Cras eu augue tellus. Nam pretium eget nisi non viverra. Maecenas eget tincidunt nibh, vitae interdum dolor.</p>
-      </div>
-      <div class="col-3">
-        <h1>First Section Col3</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nibh dolor. Cras rutrum molestie ligula posuere hendrerit. Donec luctus vitae elit in gravida. Duis in viverra nunc. Nunc et metus blandit, blandit quam in, laoreet mi. In vitae mauris sit amet tellus dictum rhoncus malesuada non arcu. Ut lacus lacus, dignissim at commodo id, dapibus sed felis. Cras in nunc id est lobortis euismod. Sed egestas nulla et augue sagittis lacinia. Quisque finibus bibendum risus, vitae accumsan ante mollis ac. Aliquam fermentum, mauris eu gravida dictum, tortor risus finibus nibh, in tincidunt velit tortor vehicula mi.</p>
-      </div>
-    </div>
+	<div>
+	<table style="width:88%">
+  <tr>
+    <th>SerialNo</th>
+    <th>Name</th>
+    <th>Designation</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Prof. Amlan Chakrabarty</td>
+    <td>Head of the Department of A.K.C.S.I.T.</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Prof. Bhaswati Ganguli</td>
+    <td>Prof. at University of Calcutta, Dept. of Statistics</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Prof. Sugata Sen Roy</td>
+    <td>Prof. at University of Calcutta, Dept. of Statistics</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Dr. Saptarsi Goswami</td>
+    <td>Asst. Prof. of Computer Science in Bangabasi Morning College</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Sourav Malakar</td>
+    <td>Senior Project Associate in the USAID LISA 2020 Project</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Aditya Kumar Barik</td>
+    <td>Intern in the USAID LISA 2020 Project</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Wazib Ansar</td>
+    <td>M.Tech. Student in the dept. of A.K.C.S.I.T.</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Sourya Chatterjee</td>
+    <td>M.Tech. Student in the dept. of A.K.C.S.I.T.</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Ritwick</td>
+    <td>B.Tech. Student in the dept. of A.K.C.S.I.T.</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Souvik</td>
+    <td>B.Tech. Student in the dept. of A.K.C.S.I.T.</td>
+  </tr>
+</table>
+	</div>
+	</div>
+    <div id="div3">
     <div class="parallax p3">
       <hgroup>
-        <h1>Well</h1>
-        <h2>This is some bold info!</h2>
+         <h2>Activities</h2>
       </hgroup>
     </div>
+	<div style="margin:1.2%">
+	  <p><h5>Projects</h5></p></br>
+      
+        <p>1.	LISA 2020: In the recent past, the USAID LISA 2020 project has been started with the joint venture of University of Colorado Boulder under the funding of United States Agency for International Development.</p></br>
+      </br><p><h5>Workshops</h5></p></br>
+     
+      <p>1.	<b>Solar Energy Prediction:</b> A workshop on solar energy prediction was held in Astor Hotel where different aspects regarding solar energy and forecasting of generation of the very same were discussed. Some of them were Grid Integration of Renewables, A Long-Term PV Power Degradation Prediction due to Dust Fouling and Internal Stresses, Operational Challenges of Bulk Renewable Plant Integration etc.</p></br>
+
+      <p>2.	<b>Time Series Modelling:</b> The workshop on time series modelling was held in the Technology Campus, CU was enriched with Prof. Amlan Chakrabarti, Dr. Sugata Sen Roy, Prof. Bhaswati Ganguli, Dr. Saptarsi Goswami and many more personalities. It started with an overview from Prof. Amlan Chakrabarti on the journey and road-map of S4DS (https://www.s4ds.org/). Next, Dr. Sugata Sen Roy took a session on Time Series Analysis where a several time series models were discussed namely, AR, MA, ARMA, ARIMA etc. Prof. Bhaswati Ganguli spoke about some statistical techniques for doing short term prediction on Global Horizontal Irradiance which is an important factor in renewable energy and then also on reliability on photo voltaic cells. Dr. Saptarsi Goswami also took a session on RNN and LSTM. </p></br>
+
+      <p>3.	<b>F8 Local Conference:</b> A F8 Local Conference was held in the premises of Technology Campus, University of Calcutta. This was a grand success for the active community members like Sayantan Dutta, Debraj Dey, Shuvam Manna and others from “Facebook Developer Circle, Kolkata” with the presence of Prof. Amlan Chakrabarti, Dr. Saptarsi Goswami, Dr. Soumya Sen, Sabyasachi Mukhopadhyay and many others. </p></br>
+
+      <p>4.	<b>Python and Machine Learning:</b> A workshop on Introduction to Python and Machine Learning was conducted at FIEM by S4DS. The contents covered were – Basics of Python programming with IDLE, Lists, Sets, Tuples, Dictionary, Introduction to Machine Learning, NumPy, Panda, Matplotlib, kNN and K-Means Classification. </p></br>
+
+      <p>5.	<b>Time Series Analysis:</b> In this workshop on Time Series Analysis. Prof. Sugata Sen Roy, Professor & Head of the Dept. of Statistics, University of Calcutta showed the path of the journey of Time Series Analysis. He focused on Time domain models, He gave several examples on different components of Time Series mainly trend and Seasonality and how this makes the Time Series nonstationary. Population is a Time Series which displays increasing trend & temperature is a Time Series which shows a daily as well as a yearly seasonality. An example where a Time Series is stationary & yet interesting is the ECG Time Series. Next, we learned about AR & MA models, & how principle of parsimony is used to select an ARMA model of lower order. ARIMA is the icing on the cake, which does not need any de-trending and de-seasonalization. The use of ACF & PACF to find the order of the Time Series was quite intriguing. ARCH is an extension where we are focused more on the variability in the terms & here the squared component of the auto regressive term is used. GARCH brings the same effect as ARIMA.</p></br>
+
+      <p>6.	<b>PyTorch:</b> A seminar on PyTorch was held in the premises of Technology Campus, University of Calcutta organized by Sabyasachi Mukhopadhyay as a part of “Facebook Developer Circle, Kolkata” activity.</p></br>
+
+      <p>7.	<b>ODSC Kolkata Chapter Part 1:</b> On the 3rd October, 2019 the first meetup was organized by ODSC Kolkata Chapter. Mr. Dipanjan Sarkar delivered an inaugural talk on practical effectiveness of deep learning, different architectures of the same and some great case studies.</p></br>
+
+      <p>8.	<b>ODSC Kolkata Chapter Part 2:</b> On the 22nd November, 2019 the second meetup was organized by ODSC Kolkata Chapter. Mr. Sujoy Roy Chowdhury talked about some important issues regarding Model Maintenance and Deployment.</p></br>
+
+	</div>
+	</div>
+	<div id="div4">
+	<div class="parallax p4">
+      <hgroup>
+         <h2>Photo Gallery</h2>
+      </hgroup>
+    </div>
+	<div class="row">
+  <div class="column">
+    <img src="https://i.imgur.com/XdX12xr.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/6Tv3g0C.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/cCq8KyT.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/aiX7Exh.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/U48lAnL.png" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/aiX7Exh.png" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+  </div>
+</div>
+
+    <div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <img src="https://i.imgur.com/XdX12xr.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <img src="https://i.imgur.com/6Tv3g0C.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <img src="https://i.imgur.com/cCq8KyT.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <img src="https://i.imgur.com/aiX7Exh.png" style="width:100%">
+    </div>
+	
+	<div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+      <img src="https://i.imgur.com/U48lAnL.png" style="width:100%">
+    </div>
+	
+	<div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+      <img src="https://i.imgur.com/IogBTc0.png" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="https://i.imgur.com/XdX12xr.png" style="width:100%" onclick="currentSlide(1)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://i.imgur.com/6Tv3g0C.png" style="width:100%" onclick="currentSlide(2)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://i.imgur.com/cCq8KyT.png" style="width:100%" onclick="currentSlide(3)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://i.imgur.com/aiX7Exh.png" style="width:100%" onclick="currentSlide(4)">
+    </div>
+	<div class="column">
+      <img class="demo cursor" src="https://i.imgur.com/U48lAnL.png" style="width:100%" onclick="currentSlide(5)">
+    </div>
+	<div class="column">
+      <img class="demo cursor" src="https://i.imgur.com/IogBTc0.png" style="width:100%" onclick="currentSlide(6)">
+    </div>
+  </div>
+</div>
+
+     <script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+	</div>
+	
+	<div id="div5">
+	<div class="parallax p5">
+      <hgroup>
+         <h2>Publications</h2>
+      </hgroup>
+	  
+    </div>
+	<div style="margin:1.2%">
+	     	
+
+           <p><b>1.</b>	Malakar, S., Goswami, S. and Chakrabarti, A., 2018. An Online Trend Detection Strategy for Twitter Using Mann–Kendall Non-parametric Test. In Industry Interactive Innovations in Science, Engineering and Technology (pp. 185-193). Springer, Singapore.</p></br> 
+           <p><b>2.</b>	Malakar, S., Goswami, S., Chakrabarti, A. and Chakraborty, B., 2020. A Hybrid and Adaptive Approach for Classification of Indian Stock Market-Related Tweets. In Data Management, Analytics and Innovation (pp. 325-342). Springer, Singapore.</p></br>
+           <p><b>3.</b>	Aditya Kumar Barik, Sourav Malakar, Saptarsi Goswami, Bhaswati Ganguli, Sugata Sen Roy, Amlan Chakrabarti, 2020. Analysis of GHI Forecasting using Seasonal ARIMA. ICDMAI 2020 Accepted.</p></br>
+           <p><b>4.</b>	Wazib Ansar, Saptarsi Goswami, Amit Kumar Das, 2020. A Data Science Approach to Analysis of Tweets Based on Cyclone Fani. ICDMAI 2020 Accepted.</p></br>
+
+	  </div>
+	</div>
     <footer>
       <div class="row" id="section-3">
         <div class="col-3">
-          <p>Calcutta University AKCSIT Data-Science Lab is a new lab</p>
+          <p><b>Data Science Laboratory</b></br>
+            University of Calcutta</br>
+            Technology Campus</br>
+            JD-2, JD Block, Sector III, Bidhannagar, Kolkata, West Bengal – 700106
+          </p>
         </div>
       </div>
       <div class="footer-copyright">
