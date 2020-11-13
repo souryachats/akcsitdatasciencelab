@@ -1,828 +1,624 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <title>AKCSIT-DataScienceLab</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
-	
-	<script>
-	     
-$(document).ready(function(){
-	
-		showhome();
-	
-});
-function showhome() {
-  var a = document.getElementById("div1");
-  var b = document.getElementById("div2");
-  var c = document.getElementById("div3");
-  var d = document.getElementById("div4");
-  var e = document.getElementById("div5");
-  
-    a.style.display = "block";
-    b.style.display = "none";
-    c.style.display = "none";
-	d.style.display = "none";
-    e.style.display = "none";
-  
-};
-function showmembers() {
-  var a = document.getElementById("div1");
-  var b = document.getElementById("div2");
-  var c = document.getElementById("div3");
-  var d = document.getElementById("div4");
-  var e = document.getElementById("div5");
-  
-    a.style.display = "none";
-    b.style.display = "block";
-    c.style.display = "none";
-	d.style.display = "none";
-    e.style.display = "none";
-  
-};
-function showactivities() {
-  var a = document.getElementById("div1");
-  var b = document.getElementById("div2");
-  var c = document.getElementById("div3");
-  var d = document.getElementById("div4");
-  var e = document.getElementById("div5");
-  
-    a.style.display = "none";
-    b.style.display = "none";
-    c.style.display = "block";
-	d.style.display = "none";
-    e.style.display = "none";
-  
-};
-function showphotogallery() {
-  var a = document.getElementById("div1");
-  var b = document.getElementById("div2");
-  var c = document.getElementById("div3");
-  var d = document.getElementById("div4");
-  var e = document.getElementById("div5");
-  
-    a.style.display = "none";
-    b.style.display = "none";
-    c.style.display = "none";
-	d.style.display = "block";
-    e.style.display = "none";
-  
-};
-function showpublications() {
-  var a = document.getElementById("div1");
-  var b = document.getElementById("div2");
-  var c = document.getElementById("div3");
-  var d = document.getElementById("div4");
-  var e = document.getElementById("div5");
-  
-    a.style.display = "none";
-    b.style.display = "none";
-    c.style.display = "none";
-	d.style.display = "none";
-    e.style.display = "block";
-  
-}
-	</script>
-	<style>
-	* {
-  box-sizing: border-box;
-}
-
-.row > .column {
-  padding: 0 8px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column {
-  float: left;
-  width: 25%;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 6vh;
-  left: 0;
-  top: 25vh;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
-}
-
-/* Modal Content */
-.modal-content {
+	<head>
+		<title>DS LAB, AKCSIT</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+		
+		</script>
+		<style>
+		/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
   position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
 }
 
-/* The Close Button */
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.mySlides {
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
   display: none;
 }
 
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
+/* Style navigation menu links */
+.topnav a {
   color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-img {
-  margin-bottom: -4px;
-}
-
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
-}
-
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-img.hover-shadow {
-  transition: 0.3s;
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-	 	body {
-  background-color: #ECECEC;
-  color: #444444;
-  padding: 0;
-  margin: 0;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: 'Roboto';
-}
-.left-underline {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  overflow: hidden;
-}
-.left-underline:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 100%;
-  bottom: 0;
-  background: #ECECEC;
-  height: 4px;
-  -webkit-transition-property: right;
-  transition-property: right;
-  -webkit-transition-duration: 0.15s;
-  transition-duration: 0.15s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.left-underline:hover:before, .left-underline:focus:before, .left-underline:active:before {
-  right: 0;
-}
-div.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #ee6e73;
-  -webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-  box-shadow:         0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-  z-index: 9999999;
-}
-div.navbar > ul.navbar-container {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  overflow: hidden;
-}
-div.navbar > ul > li.nav-item {
-  float: right;
-  background-color: rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease;
-}
-div.navbar > ul > li.active {
-  background-color: rgba(0, 0, 0, 0.18);
-}
-div.navbar > ul > li:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-a.nav-button {
-  font-family: 'Roboto';
+  padding: 14px 16px;
   text-decoration: none;
-  line-height: 60px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: rgba(228, 241, 254, 1);
-  transition: all 0.5s ease;
-}
-a.nav-button:hover {
-  text-decoration: none;
-}
-li.active > a.nav-button {
-  cursor: default;
-}
-.brand-logo {
-  float: left;
-  cursor: default;
-}
-.parallax {
-  height: 35vh;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-.parallax.p1 {
-  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
-  background-size: cover;
-  color: #fff;
-}
-.parallax.p2 {
-  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
-  background-size: cover;
-  color: #fff;
-}
-.parallax.p3 {
-  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
-  background-size: cover;
-  color: #fff;
-}
-.parallax.p4 {
-  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
-  background-size: cover;
-  color: #fff;
-}
-.parallax.p5 {
-  background: url(https://c.pxhere.com/photos/3e/32/computational_office_table_keyboard_wood_work_business_notebook-1188449.jpg!d);
-  background-size: cover;
-  color: #fff;
-}
-.parallax-text {
-  width: 24em;
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  border: .5em solid #fff;
-  margin-left: -10%;
-  padding: 2em 0;
-  text-align: center;
-  z-index: 999;
-}
-.parallax > div.blur-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-} 
-hgroup{
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  color: #fff;
-  border: 5px solid #fff;
-  padding: .5em 3em;
-  background-color: rgba(0,0,0,.5);
-  z-index: 2;
-}
-.row {
-  width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 1.886%;
-  padding-bottom: 1.8%;
-  min-height: 18%;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.row > .col-3 {
-  width: 30%;
-  height: 100%;
-  box-sizing: border-box;
-  float: left;
-  padding-left: .6%;
-  padding-right: .6%;
-}
-footer {
-  width: 100%;
-  padding-top: 20px;
+  font-size: 17px;
   display: block;
-  background-color: #ee6e73;
-}
-.footer-copyright {
-  font-weight: 300;
-  overflow: hidden;
-  height: 50px;
-  line-height: 50px;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(51, 51, 51, 0.08);
-}
-.container {
-  width: 85%;
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  max-width: 1280px;
-}
-footer p {
-  border-left: 3px solid #ffcdd2;
-  padding-left: 15px;
-  text-indent: 20px;
-  color: #ececec;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding:1.8%;
-}
-table{
-  margin:9%;
 }
 
-
-
-/* Blank lines for ease and view */
-/* */
-	</style>
-
-  </head>
-  <body onload="showhome()" style="font-size:15px">
-     
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-    <div class="navbar">
-      <ul class="navbar-container">
-        <li><a href="#" class="left-underline nav-button brand-logo"><img src="https://i.imgur.com/4N6p1Kk.png" style="padding-top:10px;height:45px;margin-bottom:-20%"></a></li>
-		<li class="nav-item"><a href="#" onclick="showpublications()" class="left-underline nav-button" data-scroll>Publications</a></li>
-        <li class="nav-item"><a href="#" onclick="showphotogallery()" class="left-underline nav-button" data-scroll>Photo Gallery</a></li>
-        <li class="nav-item"><a href="#" onclick="showactivities()" class="left-underline nav-button" data-scroll>Activities</a></li>
-        <li class="nav-item"><a href="#" onclick="showmembers()" class="left-underline nav-button" data-scroll>Members</a></li>
-        <li class="nav-item"><a href="#" onclick="showhome()" class="left-underline nav-button" data-scroll>Home</a></li>
-      </ul>
-    </div>
-	<div id="div1">
-    <div class="parallax p1">
-      <hgroup>
-         <h2>DATA SCIENCE LABORATORY, AKCSIT</h2>		 
-      </hgroup>
-    </div>
-	<table style="margin:0px;padding:4%">
-	<tr><td>
-    <div class="row" style="width:100%;padding-right:4%;padding-left:4%">
-      <div class="col-3" style="width:33%">
-        
-        <p>Data Science is a concept to bundle Statistics, Computer Science and Domain Knowledge to analyse the actual phenomena of data. Fuelled by Big Data and AI, the demand of Data Science is growing exponentially and with this rise, the A.K.C.S.I.T. under University of Calcutta has also looked forward by opening a laboratory dedicated for exploring the world of Data Science. The data science laboratory has a Fuzitusu 16 core server with 256 GB RAM and a GPU will be added to the rack in the next 2 months. The lab has i5 machines with 16 GB RAM provided by TEQUIP and high-speed internet connectivity.</p>
-      </div>
-      <div class="col-3"  style="width:33%">
-       
-        <p>The students are encouraged to use cloud resources like Kaggle Kernels and Google Colab for the researchers are working are renewable energy, quantum machine learning, medical image processing, text analytics, bioinformatics to name a few. The research work is carried out in collaboration with many national and international institutes and organizations. There is a strong data science ecosystem built around the lab, where not only students but practitioners from different companies participate. There is participation from industry in sharing research problems.</p>
-      </div>
-      <div class="col-3"  style="width:33%">
-        
-        <p>In last 3-4 months there have been workshops organized on Deep Learning, Time Series Analysis and Quantum Computing. There is also monthly meetups as a knowledge sharing session. In next 3 months, we are planning to have a session multivariate statistic, use of neural networks for time series prediction and artificial intelligence. Few tutorials are also being planned to be organized shortly.</p>
-      </div>
-    </div>
-	</td>
-	<td style="vertical-align:top;padding:0px;padding-top:4%">
-	    <table style="margin:0px;padding:0px;border:0px;border-bottom:1px">
-		<tr><td style="padding:0px">
-	    <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=88.41468572616579%2C22.566753434250348%2C88.4167590737343%2C22.56852684061459&amp;layer=mapnik&amp;marker=22.567640140283988%2C88.41572374105453" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=22.56764&amp;mlon=88.41572#map=19/22.56764/88.41572">View Larger Map</a></small>
-	     </td></tr>
-		 <tr>
-		 <td style="padding:4%">
-		  <h3><a href="http://akcsit.in/">A.K.C.S.I.T</a></br></h3>
-		  <h3><a href="https://www.caluniv.ac.in/">Calcutta University</a></h3>
-		 </td>
-		 </tr>
-		 </table>
-	
-	</td>
-	</table>
-    </div>
-	<div id="div2">
-	<div class="parallax p2">
-      <hgroup>
-        
-        <h2>Members</h2>
-      </hgroup>
-    </div>
-	<div>
-	<table style="width:88%">
-  <tr>
-    <th>SerialNo</th>
-    <th>Name</th>
-    <th>Designation</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Prof. Amlan Chakrabarty</td>
-    <td>Head of the Department of A.K.C.S.I.T.</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Prof. Bhaswati Ganguli</td>
-    <td>Prof. at University of Calcutta, Dept. of Statistics</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Prof. Sugata Sen Roy</td>
-    <td>Prof. at University of Calcutta, Dept. of Statistics</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Dr. Saptarsi Goswami</td>
-    <td>Asst. Prof. of Computer Science in Bangabasi Morning College</td>
-  </tr>
-   <tr>
-    <td>5</td>
-    <td>Dr.Soumya Sen</td>
-    <td>Faculty of A.K.C.S.I.T</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>Mr. Dibyendu Seal</td>
-    <td>Faculty of A.K.C.S.I.T</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td>Mr. Amit Das</td>
-    <td>Visiting Faculty</td>
-  </tr>
-   <tr>
-    <td>8</td>
-    <td>Mr. Sabyasachi Mukhopadhay </td>
-    <td>Machine Learning GDE </td>
-  </tr>
-  <tr>
-    <td>9</td>
-    <td>Mr. Joy Mustafi</td>
-    <td>Director, AI Research Salesforce</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>Mr. Ambarish Ganguli </td>
-    <td>Principal Consultant IoT TCS</td>
-  </tr>
-  <tr>
-    <td>11</td>
-    <td>Mr. Mritunjoy Pandey</td>
-    <td>Senior Mangaer AI in Testing, Cognizant</td>
-  </tr>
-   <tr>
-    <td>12</td>
-    <td>Mr. Kaushik Dey</td>
-    <td>AI & Ml lead, India Ericsson</td>
-  </tr>
-  <tr>
-    <td>13</td>
-    <td>Mr. Suvro Sankar Ghosh </td>
-    <td>Data Scientist Atos</td>
-  </tr>
-</table>
-	</div>
-	</div>
-    <div id="div3">
-    <div class="parallax p3">
-      <hgroup>
-         <h2>Activities</h2>
-      </hgroup>
-    </div>
-	<div>
-	<table style="width:88%">
-	  <tr><td><h4>Projects</h4></td></tr>
-      <tr><td>	<b>Forecasting for renewable energy generation</b></br>
-              <b> Objective: </b>  For proper planning and utilization of renewable energy forecasting is utmost important because of the inherent variability</br>
-              <b>Approach:</b> A LSTM based approach for GHI  has been proposed.  Now some further work is being done to better represent the data and also to assess the effect of locality</br>
-              <b>Result:</b> The models are giving reasonable nRMSE  across three stations from two climatic zones. </br> 
-              <b>Current Status:</b>Submitted to Energy Journal of Elsevier</br>
-              <b>Next Step:</b>  Study the stability of the parameters across locations, start with prediction of wind power generation</br>
-              <b>Team Members:</b>  Prof. Amlan Chakrbarti, Prof. Bhaswati Ganguli, Dr. Saptarsi Goswami,, Sourav Malakar, Aditya Kumar Barik</br>
-     
-	  </td></tr>
-	  <tr><td><b>Quantum inspired feature selection</b></br>
-              <b> Objective: </b>  To study different quantum inspired strategies and apply the same for feature selection and make it available as open source tool</br>
-              <b>Approach:</b> Mapping some of the existing feature selection metric in QUBO format, so that simulated quantum annealing can be applied.  
-              </br>Evaluate and Map Quantum operators for quantum inspired GA for feature selection.</br>
-              <b>Result:</b>Conference paper submitted to ICDMAi 2019 about the QUBO formulation.</br> 
-              <b>Current Status:</b> The QUBO formulation to be published as open source kernel</br>
-              <b>Next Step:</b>Map and implement Quantum Inspired GA  </br>
-              <b>Team Members:</b>  Prof. Basabi  Chakraborty, Prof. Amlan Chakrabarti, Dr. Saptarsi  Goswami,  Mr. Mrityunjay Pande</br>
-     
-	   </td></tr>
-       
-	   
-	   <tr><td>	<b>OLAP Analysis based on big data tools</b></br>
-              <b> Objective: </b>  For proper planning and utilization of renewable energy forecasting is utmost important because of the inherent variability</br>
-              <b>Approach:</b> Studying and analyzing different features of Big Data tools and identifying the different constraints to build enterprise information system. </br>
-              <b>Result:</b> Framework has been proposed , using MongoDB.</br> 
-              <b>Current Status:</b> We are on the process of submitting this in Journal</br>
-              <b>Next Step:</b>  Data warehouse formed based on MongoDB , could be analyzed further at granular level by using Neo4j and also identifying new features of data warehouse for big data platform. </br>
-              <b>Team Members:</b> Dr. Soumya Sen(Faculty), Mr. Biswajit Maity (Faculty from other institute) </br>
-     
-	   </td></tr>
-	   <tr><td>	<b>Explainable machine Learning (Feature Association and Information Map)</b></br>
-              <b> Objective: </b>  Develop visualization tools for understanding feature to feature and feature to target interaction</br>
-              <b>Approach:</b> Use crisp and fuzzy graphs to model feature to feature and feature to target relevance and then apply graph theoretic principles to select most useful features</br>
-              <b>Current Status:</b> Many techniques have been developed and couple of papers are submitted and getting reviewed.</br> 
-              
-              <b>Next Step:</b>  Make it available as Open Source tool</br>
-              <b>Team Members:</b>  Mr. Amit Das ( Research Scholar), Dr. Saptarsi Goswami,  Prof. Amlan Chakrabarti, Prof. Basabi Chakraborty</br>
-     
-	   </td></tr>
-	   <tr><td>	<b>Text Analytics , Social media, events</b></br>
-              <b> Objective: </b>  To develop tools to analyze tweets related to certain events and extract actionable insight </br>
-              <b>Approach:</b> :  Collecting tweets related to various events like Disaster, Macro economic discussions or some other sensitive events, apply state of art sentiment analysis, topic discovery etc.</br>
-              <b>Current Status:</b> Datasets are getting prepared on various issues,  one paper has been submitted to ICDMAI2020 conference.</br>
-              <b>Next Step:</b>  Fine tune and Improve existing state of the art.</br>
-              <b>Team Members:</b>  Dr. Saptarsi Goswami,  Mr. Wazib Ansar, Mr, Sourya Chatterjee</br>
-     
-	   </td></tr>
-	   <tr><td>	<b>Developing deep learning models for multiomics data integration</b></br>
-              <b> Objective: </b>  Integrating genomics , proteomics, epigenomics, metabolomics etc.  for finding out significant bio markers and mapping them to patient survival</br>
-              <b>Approach:</b> To identify significant features from  the multiomics data and develop deep neural network based models for their integration.</br>
-              <b>Current Status:</b> The model has been successfully built, testing and evaluation is going on.</br>
-              <b>Next Step:</b>  Publish results</br>
-              <b>Team Members:</b>  Mr. Dibyendu Bikash Seal (Faculty), Dr. Vivek Das (Bioinformatician)</br>
-     
-	   </td></tr>
-      </table><table style="width:88%;margin-top:0%">
-	  <tr><td><h4>Workshops</h4></td></tr>
-     
-      <tr><td>1.	<b>Solar Energy Prediction:</b> A workshop on solar energy prediction was held in Astor Hotel where different aspects regarding solar energy and forecasting of generation of the very same were discussed. Some of them were Grid Integration of Renewables, A Long-Term PV Power Degradation Prediction due to Dust Fouling and Internal Stresses, Operational Challenges of Bulk Renewable Plant Integration etc.</td></tr>
-
-      <tr><td>2.	<b>Time Series Modelling:</b> The workshop on time series modelling was held in the Technology Campus, CU was enriched with Prof. Amlan Chakrabarti, Dr. Sugata Sen Roy, Prof. Bhaswati Ganguli, Dr. Saptarsi Goswami and many more personalities. It started with an overview from Prof. Amlan Chakrabarti on the journey and road-map of S4DS (https://www.s4ds.org/). Next, Dr. Sugata Sen Roy took a session on Time Series Analysis where a several time series models were discussed namely, AR, MA, ARMA, ARIMA etc. Prof. Bhaswati Ganguli spoke about some statistical techniques for doing short term prediction on Global Horizontal Irradiance which is an important factor in renewable energy and then also on reliability on photo voltaic cells. Dr. Saptarsi Goswami also took a session on RNN and LSTM. </td></tr>
-
-      <tr><td>3.	<b>F8 Local Conference:</b> A F8 Local Conference was held in the premises of Technology Campus, University of Calcutta. This was a grand success for the active community members like Sayantan Dutta, Debraj Dey, Shuvam Manna and others from “Facebook Developer Circle, Kolkata” with the presence of Prof. Amlan Chakrabarti, Dr. Saptarsi Goswami, Dr. Soumya Sen, Sabyasachi Mukhopadhyay and many others. </td></tr>
-
-      <tr><td>4.	<b>Python and Machine Learning:</b> A workshop on Introduction to Python and Machine Learning was conducted at FIEM by S4DS. The contents covered were – Basics of Python programming with IDLE, Lists, Sets, Tuples, Dictionary, Introduction to Machine Learning, NumPy, Panda, Matplotlib, kNN and K-Means Classification. </td></tr>
-
-      <tr><td>5.	<b>Time Series Analysis:</b> In this workshop on Time Series Analysis. Prof. Sugata Sen Roy, Professor & Head of the Dept. of Statistics, University of Calcutta showed the path of the journey of Time Series Analysis. He focused on Time domain models, He gave several examples on different components of Time Series mainly trend and Seasonality and how this makes the Time Series nonstationary. Population is a Time Series which displays increasing trend & temperature is a Time Series which shows a daily as well as a yearly seasonality. An example where a Time Series is stationary & yet interesting is the ECG Time Series. Next, we learned about AR & MA models, & how principle of parsimony is used to select an ARMA model of lower order. ARIMA is the icing on the cake, which does not need any de-trending and de-seasonalization. The use of ACF & PACF to find the order of the Time Series was quite intriguing. ARCH is an extension where we are focused more on the variability in the terms & here the squared component of the auto regressive term is used. GARCH brings the same effect as ARIMA.</td></tr>
-
-      <tr><td>6.	<b>PyTorch:</b> A seminar on PyTorch was held in the premises of Technology Campus, University of Calcutta organized by Sabyasachi Mukhopadhyay as a part of “Facebook Developer Circle, Kolkata” activity.</td></tr>
-
-     <tr><td>7.	<b>ODSC Kolkata Chapter Part 1:</b> On the 3rd October, 2019 the first meetup was organized by ODSC Kolkata Chapter. Mr. Dipanjan Sarkar delivered an inaugural talk on practical effectiveness of deep learning, different architectures of the same and some great case studies.</td></tr>
-
-      <tr><td>8.	<b>ODSC Kolkata Chapter Part 2:</b> On the 22nd November, 2019 the second meetup was organized by ODSC Kolkata Chapter. Mr. Sujoy Roy Chowdhury talked about some important issues regarding Model Maintenance and Deployment.</td></tr>
-      </table>
-	</div>
-	</div>
-	<div id="div4">
-	<div class="parallax p4">
-      <hgroup>
-         <h2>Photo Gallery</h2>
-      </hgroup>
-    </div>
-	<div class="row" style="width:100%">
-  <div class="column">
-    <img src="https://i.imgur.com/XdX12xr.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="https://i.imgur.com/6Tv3g0C.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="https://i.imgur.com/cCq8KyT.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="https://i.imgur.com/aiX7Exh.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="https://i.imgur.com/U48lAnL.png" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="https://i.imgur.com/aiX7Exh.png" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
-  </div>
-</div>
-
-    <div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
-
-    <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-      <img src="https://i.imgur.com/XdX12xr.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-      <img src="https://i.imgur.com/6Tv3g0C.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-      <img src="https://i.imgur.com/cCq8KyT.png" style="width:100%">
-    </div>
-    
-    <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-      <img src="https://i.imgur.com/aiX7Exh.png" style="width:100%">
-    </div>
-	
-	<div class="mySlides">
-      <div class="numbertext">5 / 6</div>
-      <img src="https://i.imgur.com/U48lAnL.png" style="width:100%">
-    </div>
-	
-	<div class="mySlides">
-      <div class="numbertext">6 / 6</div>
-      <img src="https://i.imgur.com/IogBTc0.png" style="width:100%">
-    </div>
-    
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
-
-
-    <div class="column">
-      <img class="demo cursor" src="https://i.imgur.com/XdX12xr.png" style="width:100%" onclick="currentSlide(1)">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="https://i.imgur.com/6Tv3g0C.png" style="width:100%" onclick="currentSlide(2)">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="https://i.imgur.com/cCq8KyT.png" style="width:100%" onclick="currentSlide(3)">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="https://i.imgur.com/aiX7Exh.png" style="width:100%" onclick="currentSlide(4)">
-    </div>
-	<div class="column">
-      <img class="demo cursor" src="https://i.imgur.com/U48lAnL.png" style="width:100%" onclick="currentSlide(5)">
-    </div>
-	<div class="column">
-      <img class="demo cursor" src="https://i.imgur.com/IogBTc0.png" style="width:100%" onclick="currentSlide(6)">
-    </div>
-  </div>
-</div>
-
-     <script>
-function openModal() {
-  document.getElementById("myModal").style.display = "block";
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+		</style>
+		
+		<script>
+		   function hamburgar() {
+           var x = document.getElementById("myLinks");
+           if (x.style.display === "block") {
+           x.style.display = "none";
+           } 
+		   else {
+           x.style.display = "block";
+           }
+         }
+		</script>
+	</head>
+	<body class="is-preload">
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+		<!-- Header -->
+		<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Top Navigation Menu -->
+
+			<section id="header">
+				<div class="inner">
+					<span class="icon solid major fa-cloud"></span>
+					<h1>Data Science Lab</h1>
+					<p>A.K.C.S.I.T<br />
+					CALCUTTA UNIVERSITY</p>
+					<ul class="actions special">
+						<li><a href="javascript:void(0);" class="icon" onclick="hamburgar()">
+                         <i class="fa fa-bars"></i>
+                        </a>
+						  
+						<!--<a href="#one" class="button scrolly">Discover</a>-->
+					
+					 <div class="topnav" style="width:310px">
+					 <div id="myLinks">
+                          <a href="#aboutus" class="button scrolly">About us</a>
+                          <a href="#members" class="button scrolly">Members</a>
+                          <a href="#projects" class="button scrolly">Project</a>
+                          </div>
+						  </div> </li> </ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div id = "aboutus" class="container">
+					<div class="row gtr-150">
+						<div class="col-6 col-12-medium">
+							<header class="major">
+								<h2>ABOUT US</h2>
+							</header>
+							<p>Data Science is a concept to bundle Statistics, Computer Science and Domain Knowledge to analyse the actual phenomena of data. Fuelled by Big Data and AI, the demand of Data Science is growing exponentially and with this rise, the A.K.C.S.I.T. under University of Calcutta has also looked forward by opening a laboratory dedicated for exploring the world of Data Science. The data science laboratory has a Fuzitusu 16 core server with 256 GB RAM and a GPU will be added to the rack in the next 2 months. The lab has i5 machines with 16 GB RAM provided by TEQUIP and high-speed internet connectivity.</p>
+						</div>
+						<div class="col-6 col-12-medium imp-medium">
+							<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="main style2">
+				<div id = "members" class="container">
+					<div class="row gtr-150">
+					    <div class="col-2 col-12-medium">
+							<header class="major">
+								<h2>MEMBERS</h2>
+							</header>
+							<p>FACULTY MEMBERS</p>
+						</div>
+						<div class="col-10 col-12-medium">
+							<!--<ul class="major-icons">
+								<li><span class="icon solid style1 major fa-code"></span></li>
+								<li><span class="icon solid style2 major fa-bolt"></span></li>
+								<li><span class="icon solid style3 major fa-camera-retro"></span></li>
+								<li><span class="icon solid style4 major fa-cog"></span></li>
+								<li><span class="icon solid style5 major fa-desktop"></span></li>
+								<li><span class="icon solid style6 major fa-calendar"></span></li>
+							</ul>-->
+							<table style="width:88%; border : none">
+                            <tr>
+	                        <td align="center"; style="width:33%">
+                            <img src="images/Amlan_sir.jpg" width="80"
+                             height="80">
+		                     <p> Amlan Chakraborty</p>
+		                     <p> Head Of the Department, A.K.C.S.I.T</p>
+		                     </td>
+		                     <td align="center" style="width:33%">
+                             <img src="images/Bhaswati_mam.png" alt="Simply Easy Learning" width="80"
+                             height="80">
+		                     <p>Prof. Bhaswati Ganguli</p>
+		                     <p>Prof. at University of Calcutta, Dept. of Statistics</p>
+		 
+		                     </td></tr><tr>
+		                     <td align="center" style="width:33%">
+                             <img src="images/Saptarsi_sir.jpg" alt="Simply Easy Learning" width="80"
+                             height="80">
+		                     <p>Dr. Saptarsi Goswami</p>
+                             <p>Asst. Prof. of Computer Science in Bangabasi Morning College</p>
+		                     </td>
+		                     
+	                         <td align="center"; style="width:33%">
+                             <img src="images/Soumya_sir.jpg" width="80"
+                             height="80">
+		                     <p> Soumya Sen</p>
+		                     <p> Faculty, A.K.C.S.I.T</p>
+		                     </td></tr><tr>
+		                     <td align="center" style="width:33%">
+                             <img src="images/unknown.jpeg" alt="Bhaswati ganguly" width="80"
+                              height="80">
+		                     <p>Mr. Dibyendu Seal</p>
+		                     <p>Faculty, A.K.C.S.I.T</p>
+		 
+		                     </td>
+		 
+		                     </tr>
+		                     </table>
+						</div>
+						
+					</div>
+					<div class="row gtr-150">
+					    <div class="col-2 col-12-medium">
+							<header class="major">
+								<h2>MEMBERS</h2>
+							</header>
+							<p>Scholars, Students & Interns</p>
+						</div>
+						<div class="col-10 col-12-medium">
+							<!--<ul class="major-icons">
+								<li><span class="icon solid style1 major fa-code"></span></li>
+								<li><span class="icon solid style2 major fa-bolt"></span></li>
+								<li><span class="icon solid style3 major fa-camera-retro"></span></li>
+								<li><span class="icon solid style4 major fa-cog"></span></li>
+								<li><span class="icon solid style5 major fa-desktop"></span></li>
+								<li><span class="icon solid style6 major fa-calendar"></span></li>
+							</ul>-->
+							<table style="width:88%; border : none">
+                            <tr>
+	                        <td align="center"; style="width:33%">
+                            <img src="images/unknown.jpeg" width="80"
+                             height="80">
+		                     <p> Sourav Malakar</p>
+		                     <p> Scholar, A.K.C.S.I.T</p>
+		                     </td>
+		                     <td align="center" style="width:33%">
+                             <img src="images/unknown.jpeg" alt="Simply Easy Learning" width="80"
+                             height="80">
+		                     <p>Wazib Ansar</p>
+		                     <p>Student, A.K.C.S.I.T</p>
+		 
+		                     </td></tr><tr>
+		                     <td align="center" style="width:33%">
+                             <img src="images/unknown.jpeg" alt="Simply Easy Learning" width="80"
+                             height="80">
+		                     <p>Sourya Chatterjee</p>
+                             <p>Student, A.K.C.S.I.T</p>
+		                     </td>
+		                     
+	                         <td align="center"; style="width:33%">
+                             <img src="images/unknown.jpeg" width="80"
+                             height="80">
+		                     <p> Aditya Barik</p>
+		                     <p> Intern, A.K.C.S.I.T</p>
+		                     </td></tr>
+		                     </tr>
+		                     </table>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="main style1 special">
+				<div id = "projects" class="container">
+					<header class="major">
+						<h2>PROJECTS</h2>
+					</header>
+					<p>Lots of projects under us...............</p>
+					<div class="row gtr-150">
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/pic02.jpg" alt="" /></span>
+							<h3>Forecasting for renewable energy generation</h3>
+							<p>For proper planning and utilization of renewable energy forecasting is utmost important because of the inherent variability...</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
+							<h3>Quantum inspired feature selection</h3>
+							<p>To study different quantum inspired strategies and apply the same for feature selection and make it available as open source tool...</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
+							<h3>OLAP Analysis based on big data tools</h3>
+							<p>For proper planning and utilization of renewable energy forecasting is utmost important because of the inherent variability....</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Four -->
+			<!--<section id="four" class="main style2 special">
+				<div class="container">
+					<header class="major">
+						<h2>Ipsum feugiat consequat?</h2>
+					</header>
+					<p>Sed lacus nascetur ac ante amet sapien.</p>
+					<ul class="actions special">
+						<li><a href="#" class="button wide primary">Sign Up</a></li>
+						<li><a href="#" class="button wide">Learn More</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+		<!-- Five -->
+		
+			<!--<section id="five" class="main style1">
+				<div class="container">
+					<header class="major special">
+						<h2>Elements</h2>
+					</header>
+
+					<section>
+						<h4>Text</h4>
+						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+						<hr />
+						<header>
+							<h4>Heading with a Subtitle</h4>
+							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+						</header>
+						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+						<header>
+							<h5>Heading with a Subtitle</h5>
+							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+						</header>
+						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+						<hr />
+						<h2>Heading Level 2</h2>
+						<h3>Heading Level 3</h3>
+						<h4>Heading Level 4</h4>
+						<h5>Heading Level 5</h5>
+						<h6>Heading Level 6</h6>
+						<hr />
+						<h5>Blockquote</h5>
+						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+						<h5>Preformatted</h5>
+						<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+print 'Iteration ' + i;
+deck.shuffle();
+i++;
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+					</section>
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
-	</div>
-	
-	<div id="div5">
-	<div class="parallax p5">
-      <hgroup>
-         <h2>Publications</h2>
-      </hgroup>
-	  
-    </div>
-	<div>
-	    <table style="width:88%"> 	
+					<section>
+						<h4>Lists</h4>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<h5>Unordered</h5>
+								<ul>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Sagittis adipiscing.</li>
+									<li>Felis enim feugiat.</li>
+								</ul>
+								<h5>Alternate</h5>
+								<ul class="alt">
+									<li>Dolor pulvinar etiam.</li>
+									<li>Sagittis adipiscing.</li>
+									<li>Felis enim feugiat.</li>
+								</ul>
+							</div>
+							<div class="col-6 col-12-medium">
+								<h5>Ordered</h5>
+								<ol>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Etiam vel felis viverra.</li>
+									<li>Felis enim feugiat.</li>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Etiam vel felis lorem.</li>
+									<li>Felis enim et feugiat.</li>
+								</ol>
+								<h5>Icons</h5>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<h5>Actions</h5>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<ul class="actions">
+									<li><a href="#" class="button primary">Default</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions small">
+									<li><a href="#" class="button primary small">Small</a></li>
+									<li><a href="#" class="button small">Small</a></li>
+								</ul>
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary">Default</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary small">Small</a></li>
+									<li><a href="#" class="button small">Small</a></li>
+								</ul>
+							</div>
+							<div class="col-6 col-12-medium">
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary fit">Default</a></li>
+									<li><a href="#" class="button fit">Default</a></li>
+								</ul>
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary small fit">Small</a></li>
+									<li><a href="#" class="button small fit">Small</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
 
-           <tr><td><b>1.</b>	Malakar, S., Goswami, S. and Chakrabarti, A., 2018. An Online Trend Detection Strategy for Twitter Using Mann–Kendall Non-parametric Test. In Industry Interactive Innovations in Science, Engineering and Technology (pp. 185-193). Springer, Singapore.</td></tr> 
-           <tr><td><b>2.</b>	Malakar, S., Goswami, S., Chakrabarti, A. and Chakraborty, B., 2020. A Hybrid and Adaptive Approach for Classification of Indian Stock Market-Related Tweets. In Data Management, Analytics and Innovation (pp. 325-342). Springer, Singapore.</td></tr> 
-           <tr><td><b>3.</b>	Aditya Kumar Barik, Sourav Malakar, Saptarsi Goswami, Bhaswati Ganguli, Sugata Sen Roy, Amlan Chakrabarti, 2020. Analysis of GHI Forecasting using Seasonal ARIMA. ICDMAI 2020 Accepted.</td></tr> 
-           <tr><td><b>4.</b>	Wazib Ansar, Saptarsi Goswami, Amit Kumar Das, 2020. A Data Science Approach to Analysis of Tweets Based on Cyclone Fani. ICDMAI 2020 Accepted.</td></tr> 
-        </table>
-	  </div>
-	</div>
-    <footer>
-      <div class="row" id="section-3">
-        <div class="col-3">
-          <p><b>Data Science Laboratory</b></br>
-            University of Calcutta</br>
-            Technology Campus</br>
-            JD-2, JD Block, Sector III, Bidhannagar, Kolkata, West Bengal – 700106
-          </p>
-        </div>
-      </div>
-	  <table style="width:100%;border:0px;margin:0px;padding:0px">
-	  <tr>
-	  <td style="border:0px;margin:0px;padding:0px" >
-      <div class="footer-copyright">
-        <div class="container">
-          © AKCSIT CU 2019
-        </div>
-	   </div>
-	   </td>
-	   <td style="border:0px;margin:0px;padding:0px;">
-	   <div class="footer-copyright">
-        <div class="container" align="right">
-          By Chatterjee,Sourya
-        </div>
-	   </div>
-	   </td>
-	   </tr></table>
-    </footer>
-  </body>
+					<section>
+						<h4>Table</h4>
+						<h5>Default</h5>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+
+						<h5>Alternate</h5>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+
+					<section>
+						<h4>Buttons</h4>
+						<ul class="actions">
+							<li><a href="#" class="button primary">Primary</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button large">Large</a></li>
+							<li><a href="#" class="button">Default</a></li>
+							<li><a href="#" class="button small">Small</a></li>
+						</ul>
+						<ul class="actions fit">
+							<li><a href="#" class="button fit">Fit</a></li>
+							<li><a href="#" class="button primary fit">Fit</a></li>
+							<li><a href="#" class="button fit">Fit</a></li>
+						</ul>
+						<ul class="actions fit small">
+							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+							<li><a href="#" class="button fit small">Fit + Small</a></li>
+							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+						</ul>
+						<ul class="actions">
+							<li><span class="button primary disabled">Disabled</span></li>
+							<li><span class="button disabled">Disabled</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Form</h4>
+						<form method="post" action="#">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-6 col-12-xsmall">
+									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+								</div>
+								<div class="col-12">
+									<select name="demo-category" id="demo-category">
+										<option value="">- Category -</option>
+										<option value="1">Manufacturing</option>
+										<option value="1">Shipping</option>
+										<option value="1">Administration</option>
+										<option value="1">Human Resources</option>
+									</select>
+								</div>
+								<div class="col-4 col-12-small">
+									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+									<label for="demo-priority-low">Low</label>
+								</div>
+								<div class="col-4 col-12-small">
+									<input type="radio" id="demo-priority-normal" name="demo-priority">
+									<label for="demo-priority-normal">Normal</label>
+								</div>
+								<div class="col-4 col-12-small">
+									<input type="radio" id="demo-priority-high" name="demo-priority">
+									<label for="demo-priority-high">High</label>
+								</div>
+								<div class="col-6 col-12-small">
+									<input type="checkbox" id="demo-copy" name="demo-copy">
+									<label for="demo-copy">Email me a copy</label>
+								</div>
+								<div class="col-6 col-12-small">
+									<input type="checkbox" id="demo-human" name="demo-human" checked>
+									<label for="demo-human">Not a robot</label>
+								</div>
+								<div class="col-12">
+									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+								</div>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+
+					<section>
+						<h4>Image</h4>
+						<h5>Fit</h5>
+						<div class="box alt">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+							</div>
+						</div>
+						<h5>Left &amp; Right</h5>
+						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+					</section>
+
+				</div>
+			</section>-->
+		
+
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; AKCSIT, CU</li>
+				</ul>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
