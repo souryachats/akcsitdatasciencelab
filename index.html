@@ -15,7 +15,64 @@
 		
 		</script>
 		<style>
-		/* Style the navigation menu */
+        /* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+/* Style the navigation menu */
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -56,7 +113,7 @@
   background-color: #4CAF50;
   color: white;
 }
-		</style>
+        </style>
 		
 		<script>
 		   function hamburgar() {
@@ -82,7 +139,7 @@
 				<div class="inner">
 					<span class="icon solid major fa-cloud"></span>
 					<h1>Data Science Lab</h1>
-					<p>A.K.C.S.I.T<br />
+					<p>A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY<br />
 					CALCUTTA UNIVERSITY</p>
 					<ul class="actions special">
 						<li><a href="javascript:void(0);" class="icon" onclick="hamburgar()">
@@ -109,7 +166,7 @@
 							<header class="major">
 								<h2>ABOUT US</h2>
 							</header>
-							<p>Data Science is a concept to bundle Statistics, Computer Science and Domain Knowledge to analyse the actual phenomena of data. Fuelled by Big Data and AI, the demand of Data Science is growing exponentially and with this rise, the A.K.C.S.I.T. under University of Calcutta has also looked forward by opening a laboratory dedicated for exploring the world of Data Science. The data science laboratory has a Fuzitusu 16 core server with 256 GB RAM and a GPU will be added to the rack in the next 2 months. The lab has i5 machines with 16 GB RAM provided by TEQUIP and high-speed internet connectivity.</p>
+							<p>Data Science is a concept to bundle Statistics, Computer Science and Domain Knowledge to analyse the actual phenomena of data. Fuelled by Big Data and AI, the demand of Data Science is growing exponentially and with this rise, the A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY. under University of Calcutta has also looked forward by opening a laboratory dedicated for exploring the world of Data Science. The data science laboratory has a Fuzitusu 16 core server with 256 GB RAM and a GPU will be added to the rack in the next 2 months. The lab has i5 machines with 16 GB RAM provided by TEQUIP and high-speed internet connectivity.</p>
 						</div>
 						<div class="col-6 col-12-medium imp-medium">
 							<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
@@ -142,8 +199,8 @@
 	                        <td align="center"; style="width:50%">
                             <img src="images/Amlan_sir.jpg" width="80"
                              height="80">
-		                     <p> Amlan Chakraborty</p>
-		                     <p> Head Of the Department, A.K.C.S.I.T</p>
+		                     <p> Prof. Amlan Chakrabarti</p>
+		                     <p> Director & Professor, A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY</p>
 		                     </td>
 		                     <td align="center" style="width:50%">
                              <img src="images/bhaswati_mam.jpg" alt="Simply Easy Learning" width="80"
@@ -163,16 +220,32 @@
                              <img src="images/Soumya_sir.jpg" width="80"
                              height="80">
 		                     <p> Dr. Soumya Sen</p>
-		                     <p> Faculty, A.K.C.S.I.T</p>
+		                     <p> Faculty, A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY</p>
 		                     </td></tr><tr>
 		                     <td align="center" style="width:50%">
                              <img src="images/unknown.jpeg" alt="Bhaswati ganguly" width="80"
                               height="80">
 		                     <p>Mr. Dibyendu Seal</p>
-		                     <p>Faculty, A.K.C.S.I.T</p>
+		                     <p>Faculty, A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY</p>
 		 
 		                     </td>
+							 <td align="center" style="width:50%">
+                             <img src="images/sugata_sir.jpg" alt="Sugata Sen Roy" width="80"
+                              height="80">
+		                     <p>Prof. Sugata Sen Roy</p>
+		                     <p>Prof. at University of Calcutta, Dept. of Statistics</p>
+		                     </td>
 		 
+		                     </tr>
+							 <tr>
+		                     <td align="center" style="width:50%">
+                             <img src="images/amit_sir.png" alt="Amit Kumar Das" width="80"
+                              height="80">
+		                     <p>Mr. Amit Kumar Das</p>
+		                     <p>Asst. Prof. of Computer Science in IEM</p>
+		 
+		                     </td>
+							  
 		                     </tr>
 		                     </table>
 						</div>
@@ -200,27 +273,27 @@
                             <img src="images/unknown.jpeg" width="80"
                              height="80">
 		                     <p> Sourav Malakar</p>
-		                     <p> Scholar, A.K.C.S.I.T</p>
+		                     <p> Scholar, A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY</p>
 		                     </td>
 		                     <td align="center" style="width:50%">
                              <img src="images/unknown.jpeg" alt="Simply Easy Learning" width="80"
                              height="80">
 		                     <p>Wazib Ansar</p>
-		                     <p>Student, A.K.C.S.I.T</p>
+		                     <p>Student, A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY</p>
 		 
 		                     </td></tr><tr>
 		                     <td align="center" style="width:50%">
                              <img src="images/unknown.jpeg" alt="Simply Easy Learning" width="80"
                              height="80">
 		                     <p>Sourya Chatterjee</p>
-                             <p>Student, A.K.C.S.I.T</p>
+                             <p>Student, A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY</p>
 		                     </td>
 		                     
 	                         <td align="center"; style="width:50%">
                              <img src="images/unknown.jpeg" width="80"
                              height="80">
 		                     <p> Aditya Barik</p>
-		                     <p> Intern, A.K.C.S.I.T</p>
+		                     <p> Intern, A.K CHOUDHURY SCHOOL OF INFORMATION TECHNOLOGY</p>
 		                     </td></tr>
 		                     </tr>
 		                     </table>
@@ -239,32 +312,52 @@
 					<p>Lots of projects under us...............</p>
 					<div class="row gtr-150">
 						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Forecasting for renewable energy generation</h3>
+							<span class="image fit"><img src="images/pr_1.png" alt="" /></span>
+							<h3>Aspect Based Sentiment Analysis</h3>
+							<p>Using machine learning algorithms we perform here aspect based sentiment analysis...</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/pr_2.png" alt="" /></span>
+							<h3>Renewable energy forecasting</h3>
 							<p>For proper planning and utilization of renewable energy forecasting is utmost important because of the inherent variability...</p>
 							<ul class="actions special">
 								<li><a href="#" class="button">More</a></li>
 							</ul>
 						</div>
 						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
-							<h3>Quantum inspired feature selection</h3>
-							<p>To study different quantum inspired strategies and apply the same for feature selection and make it available as open source tool...</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h3>OLAP Analysis based on big data tools</h3>
-							<p>For proper planning and utilization of renewable energy forecasting is utmost important because of the inherent variability....</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
+							<span class="image fit"><img src="images/pr_3.png" alt="" /></span>
+							<h3>The covid detection project</h3>
+							<!--<p>Covid Detection!! how much possible!!!....</p>-->
+							<ul class="actions special popup">
+								<li><a class="button" onclick="myFunction()">More</a></li>
+                                <span class="popuptext" id="myPopup"><iframe src="test_popup.html" height="200" width="300"></iframe></span>
+								
 							</ul>
 						</div>
 					</div>
+					<div class="row gtr-150">
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/pr_4.png" alt="" /></span>
+							<h3>Explainble models through feature selection and Visualization</h3>
+							<p>For proper planning and utilization of renewable energy forecasting is utmost important because of the inherent variability...</p>
+							<ul class="actions special">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</div>
+						
+					</div>
 				</div>
 			</section>
+			<script>
+// When the user clicks on div, open the popup
+           function myFunction() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+            }
+</script>
 
 		<!-- Four -->
 			<!--<section id="four" class="main style2 special">
